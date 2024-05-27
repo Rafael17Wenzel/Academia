@@ -4,22 +4,14 @@ import model.Aluno;
 
 public class Gerenciador {
 
-    private static Aluno[] alunos;
+    public static Aluno[] alunos;
 
     public static void inserir(Aluno a) {
         //adicionar tamanho
         adicionarTamanho();
         //inserir aluno
         alunos[alunos.length - 1] = a;
-        //incrementar quantidade de alunos criados
-        Aluno.quantidadeDeAlunosCriados++;
-        //adicionar id para o aluno
-        a.setId(Aluno.quantidadeDeAlunosCriados);
-        System.out.println(alunos[0]);
-        System.out.println(alunos[1]);
         
-       
-
     }
 
     public static void deletar() {

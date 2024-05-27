@@ -21,6 +21,9 @@ public class Aluno {
         this.plano = plano;
         this.matriculado = matriculado;
         
+        // incrementar quantidadeDeAlunosCriados
+        quantidadeDeAlunosCriados++;
+        this.id = quantidadeDeAlunosCriados;
     }
 
     public int getId() {
