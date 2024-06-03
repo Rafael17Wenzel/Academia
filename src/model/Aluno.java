@@ -78,7 +78,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return id + nome + rg + cpf + plano + matriculado;
+        return id + "|" + nome+ "|" + rg + "|" + cpf + "|" + plano + "|" + matriculado;
     }
 
 }
