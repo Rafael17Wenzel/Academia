@@ -6,7 +6,7 @@ public class Aluno {
 
     private int id;
     private String nome;
-    private int idade;
+    private long rg;
     private long cpf;
     private String plano;
     private boolean matriculado;
@@ -15,9 +15,9 @@ public class Aluno {
 
     }
 
-    public Aluno(String nome, int idade, long cpf, String plano, boolean matriculado) {
+    public Aluno(String nome, long rg, long cpf, String plano, boolean matriculado) {
         this.nome = nome;
-        this.idade = idade;
+        this.rg = rg;
         this.cpf = cpf;
         this.plano = plano;
         this.matriculado = matriculado;
@@ -44,12 +44,12 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public long getRg() {
+        return rg;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setRg(long rg) {
+        this.rg = rg;
     }
 
     public long getCpf() {
@@ -78,7 +78,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return id + nome + idade + cpf + plano + matriculado;
+        return id + nome + rg + cpf + plano + matriculado;
     }
 
 }

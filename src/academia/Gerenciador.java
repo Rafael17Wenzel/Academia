@@ -14,6 +14,36 @@ public class Gerenciador {
 
     }
 
+    public static Aluno[] ler() {
+        return alunos;
+    }
+
+    public static void atualizar(int id, String campo, String args) {
+        switch (campo) {
+            case "nome":
+                pegarAluno(id).setNome(args);
+                break;
+
+            case "rg":
+                pegarAluno(id).setRg(Long.parseLong(args));
+                break;
+
+            case "cpf":
+                pegarAluno(id).setCpf(Long.parseLong(args));
+                break;
+
+            case "plano":
+                pegarAluno(id).setPlano(args);
+                break;
+
+            case "matriculado":
+                pegarAluno(id).setMatriculado(Boolean.getBoolean(args));
+                break;
+
+        }
+
+    }
+
     public static void deletar(int id) {
         //PROCURAR ÍNDICE DO ALUNO
         int indice = pegarIndiceAluno(id);
@@ -21,10 +51,6 @@ public class Gerenciador {
         alunos[indice] = null;
         //ARRUMAR O ARRAY
         arrumarArray();
-
-    }
-
-    public static void atualizar() {
 
     }
 
@@ -42,6 +68,15 @@ public class Gerenciador {
             }
         }
 
+    }
+
+    private static Aluno pegarAluno(int id) {
+        for (Aluno a : alunos) {
+            if (a.getId() == id) {
+                return a;
+            }
+        }
+        return null;
     }
 
     private static int pegarIndiceAluno(int id) {
