@@ -9,7 +9,7 @@ public class Gerenciador {
     public static void inserir(Aluno a) {
         //adicionar tamanho
         adicionarTamanho();
-        
+
         //inserir aluno
         alunos[alunos.length - 1] = a;
 
@@ -48,10 +48,10 @@ public class Gerenciador {
     public static void deletar(int id) {
         //PROCURAR ÍNDICE DO ALUNO
         int indice = pegarIndiceAluno(id);
-        
+
         //DELETAR O ALUNO
         alunos[indice] = null;
-        
+
         //ARRUMAR O ARRAY
         arrumarArray();
 
@@ -100,10 +100,10 @@ public class Gerenciador {
             return;
 
         }
-        
+
         //salvar array original 
         Aluno[] antigoArray = alunos;
-        
+
         // contar nulos 
         int nulos = 0;
         for (Aluno a : alunos) {
@@ -113,7 +113,7 @@ public class Gerenciador {
 
         }
         alunos = new Aluno[antigoArray.length - nulos];
-        
+
         // colocar alunos do antigo array no novo
         int j = 0;
         for (int i = 0; i < antigoArray.length; i++) {
