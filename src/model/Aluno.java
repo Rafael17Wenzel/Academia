@@ -1,7 +1,7 @@
 package model;
 
 public class Aluno {
-    
+
     public static int quantidadeDeAlunosCriados = 0;
 
     private int id;
@@ -10,17 +10,18 @@ public class Aluno {
     private long cpf;
     private String plano;
     private boolean matriculado;
-    
-    public Aluno(){
-        
+
+    public Aluno() {
+
     }
-    public Aluno(String nome,int idade,long cpf,String plano, boolean matriculado){
+
+    public Aluno(String nome, int idade, long cpf, String plano, boolean matriculado) {
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
         this.plano = plano;
         this.matriculado = matriculado;
-        
+
         // incrementar quantidadeDeAlunosCriados
         quantidadeDeAlunosCriados++;
         this.id = quantidadeDeAlunosCriados;
@@ -29,11 +30,11 @@ public class Aluno {
     public int getId() {
         return id;
     }
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
-        
+
     }
-    
 
     public String getNome() {
         return nome;
@@ -74,9 +75,9 @@ public class Aluno {
     public void setMatriculado(boolean matriculado) {
         this.matriculado = matriculado;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return id + nome + idade + cpf + plano + matriculado;
     }
 
