@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 
 public class Principal extends JFrame {
 
@@ -25,7 +26,25 @@ public class Principal extends JFrame {
 
         // Criando um rótulo
         JLabel label = new JLabel("Bem vindo ao sistema de academia Wenzel!");
-
+        
+        
+        
+        
+        // Criando painel para a tabela
+        JPanel tablePanel = new JPanel();
+        
+        // Criando o modelo
+        TabelaModel tabelaModel = new TabelaModel();
+        
+        // Criando a tabela
+        JTable tabela = new JTable(tabelaModel);
+        
+        // Adicionando a tabela ao painel
+        tablePanel.add(tabela);
+        
+        
+        
+        
         // criando painel para botôes 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
@@ -65,6 +84,7 @@ public class Principal extends JFrame {
 
         // Adicionando os itens na janela
         add(label);
+        add(tablePanel);
         add(buttonPanel);
 
         // Tornando a janela visível
