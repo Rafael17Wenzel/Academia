@@ -58,7 +58,7 @@ public class Principal extends JFrame {
         btnAtualizar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // abrir janela Atualizar
-                // TODO
+                Atualizar atualizar = new Atualizar();
             }
         });
 
