@@ -7,7 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 
 public class Principal extends JFrame {
 
@@ -16,7 +15,7 @@ public class Principal extends JFrame {
         setTitle("Academia Wenzel");
 
         // Definindo o tamanho da janela
-        setSize(500, 300);
+        setSize(600, 300);
 
         // Definindo o layout (layout padrão é BorderLayout)
         setLayout(new FlowLayout());
@@ -30,26 +29,12 @@ public class Principal extends JFrame {
         
         
         
-        // Criando painel para a tabela
-        JPanel tablePanel = new JPanel();
-        
-        // Criando o modelo
-        TabelaModel tabelaModel = new TabelaModel();
-        
-        // Criando a tabela
-        JTable tabela = new JTable(tabelaModel);
-        
-        // Adicionando a tabela ao painel
-        tablePanel.add(tabela);
-        
-        
-        
-        
         // criando painel para botôes 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
         // Criando botões
         JButton btnInserir = new JButton("Inserir");
+        JButton btnTabela = new JButton("Ver Tabela");
         JButton btnAtualizar = new JButton("Atualizar");
         JButton btnDeletar = new JButton("Deletar");
 
@@ -57,7 +42,15 @@ public class Principal extends JFrame {
         btnInserir.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // abrir janela inserir
-                // TODO
+                Inserir i = new Inserir();
+            }
+        });
+        
+        // Adicionando um ouvinte de evento ao botão "Atualizar"
+        btnTabela.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // abrir janela Tabela
+                Tabela tabela = new Tabela();
             }
         });
 
@@ -79,12 +72,12 @@ public class Principal extends JFrame {
 
         // adicionando botões no painel de botões
         buttonPanel.add(btnInserir);
+        buttonPanel.add(btnTabela);
         buttonPanel.add(btnAtualizar);
         buttonPanel.add(btnDeletar);
 
         // Adicionando os itens na janela
         add(label);
-        add(tablePanel);
         add(buttonPanel);
 
         // Tornando a janela visível
