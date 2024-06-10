@@ -14,6 +14,10 @@ public class TabelaModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
+        // Se o array de alunos for nulo ou vazio, retorna 0
+        if (alunos == null || alunos.length == 0) {
+            return 0;
+        }
         return alunos.length;
     }
 
@@ -24,6 +28,11 @@ public class TabelaModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int row, int col) {
+        // Verifica se o array de alunos é vazio ou nulo
+        if (alunos == null || alunos.length == 0) {
+            return null;
+        }
+
         Aluno aluno = alunos[row];
         switch (col) {
             case 0:
