@@ -69,6 +69,7 @@ public class AtualizarAluno extends javax.swing.JFrame {
 
 
         jCheckBox1.setText("Matriculado?");
+        jCheckBox1.setSelected(aluno.isMatriculado());
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);

@@ -119,6 +119,10 @@ public class Atualizar extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        if(academia.Gerenciador.pegarAluno(Integer.parseInt(jTextField1.getText())) == null) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Aluno não encontrado");
+            return;
+        }
         setVisible(false);
         AtualizarAluno.main(Integer.parseInt(jTextField1.getText()));
     }

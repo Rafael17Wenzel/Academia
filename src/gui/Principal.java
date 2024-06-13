@@ -78,6 +78,12 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+
         jMenu1.add(jMenuItem2);
 
         jMenuItem5.setText("Lista de Alunos");
@@ -128,6 +134,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Deletar.main();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Sobre.main();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
