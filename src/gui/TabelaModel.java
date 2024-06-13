@@ -1,7 +1,6 @@
 package gui;
 
 import academia.Gerenciador;
-import javax.swing.JLabel;
 import javax.swing.table.AbstractTableModel;
 import model.Aluno;
 

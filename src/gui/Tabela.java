@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.JTable;

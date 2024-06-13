@@ -3,12 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gui;
-
-import academia.Gerenciador;
-
 /**
  *
- * @author CWS
+ * @author Guilherme Bella Mendes
  */
 public class Deletar extends javax.swing.JFrame {
 
@@ -123,7 +120,7 @@ public class Deletar extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        Gerenciador.deletar(Integer.parseInt(jTextField1.getText()));
+        academia.Gerenciador.deletar(Integer.parseInt(jTextField1.getText()));
         setVisible(false);
     }
 

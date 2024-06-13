@@ -6,7 +6,7 @@ package gui;
 
 /**
  *
- * @author CWS
+ * @author Guilherme Bella Mendes
  */
 public class ListaDeAlunos extends javax.swing.JFrame {
 

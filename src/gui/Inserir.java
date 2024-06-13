@@ -4,13 +4,9 @@
  */
 package gui;
 
-import javax.swing.JOptionPane;
-
-import academia.Gerenciador;
-
 /**
  *
- * @author CWS
+ * @author Guilherme Bella Mendes
  */
 public class Inserir extends javax.swing.JFrame {
 
@@ -185,7 +181,7 @@ public class Inserir extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(null, "Erro ao cadastrar plano do usuario");
             return;
         }
-        Gerenciador.inserir(new model.Aluno(
+        academia.Gerenciador.inserir(new model.Aluno(
             jTextField1.getText(),
             Long.parseLong(jTextField2.getText()),
             Long.parseLong(jTextField3.getText()),

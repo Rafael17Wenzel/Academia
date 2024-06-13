@@ -6,7 +6,7 @@ package gui;
 
 /**
  *
- * @author CWS
+ * @author Guilherme Bella Mendes
  */
 public class AtualizarAluno extends javax.swing.JFrame {
 
@@ -41,9 +41,10 @@ public class AtualizarAluno extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
 
-        jLabel8.setText("jLabel8");
+        setTitle("Atualizar " + aluno.getNome());
+        setLocationRelativeTo(null);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel7.setText(String.valueOf(aluno.getId()));
 
         jLabel1.setText("ID:");
 
@@ -56,6 +57,16 @@ public class AtualizarAluno extends javax.swing.JFrame {
         jLabel5.setText("Plano:");
 
         jLabel6.setText("Situação:");
+
+
+
+        jTextField1.setText(aluno.getNome());
+
+        jTextField2.setText(String.valueOf(aluno.getRg()));
+
+        jTextField3.setText(String.valueOf(aluno.getCpf()));
+
+
 
         jCheckBox1.setText("Matriculado?");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,8 +81,6 @@ public class AtualizarAluno extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel7.setText("jLabel7");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BASICO", "PLUS", "MAX" }));
 
@@ -155,18 +164,20 @@ public class AtualizarAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        academia.Gerenciador.atualizar(aluno.getId(), jTextField1.getText(), Long.parseLong(jTextField2.getText()), Long.parseLong(jTextField3.getText()), jComboBox1.getSelectedItem().toString(), jCheckBox1.isSelected());
+        setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(int args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        aluno = academia.Gerenciador.pegarAluno(args);
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -194,6 +205,7 @@ public class AtualizarAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static model.Aluno aluno;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;

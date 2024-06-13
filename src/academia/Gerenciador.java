@@ -5,7 +5,7 @@ import enums.Planos;
 
 public class Gerenciador {
 
-    public static Aluno[] alunos;
+    private static Aluno[] alunos;
 
     public static void inserir(Aluno a) {
         //adicionar tamanho
@@ -20,38 +20,27 @@ public class Gerenciador {
         return alunos;
     }
 
-    public static void atualizar(int id, String campo, String args) {
-        switch (campo) {
-            case "nome":
-                pegarAluno(id).setNome(args);
+    public static void atualizar(int id, String nome, long rg, long cpf, String p, boolean matriculado) {
+        pegarAluno(id).setNome(nome);
+        pegarAluno(id).setRg(rg);
+        pegarAluno(id).setCpf(cpf);
+        pegarAluno(id).setMatriculado(matriculado);
+        switch (p) {
+            case "BASICO":
+                pegarAluno(id).setPlano(Planos.BASICO);
+                break;
+        
+            case "PLUS":
+                pegarAluno(id).setPlano(Planos.PLUS);
                 break;
 
-            case "rg":
-                pegarAluno(id).setRg(Long.parseLong(args));
+            case "MAX":
+                pegarAluno(id).setPlano(Planos.MAX);
                 break;
-
-            case "cpf":
-                pegarAluno(id).setCpf(Long.parseLong(args));
-                break;
-
-            case "plano":
-                int p = Integer.parseInt(args);
-                if(p == 1) {
-                    pegarAluno(id).setPlano(Planos.BASICO);
-                } else if(p == 2) {
-                    pegarAluno(id).setPlano(Planos.PLUS);
-                } else if(p == 3) {
-                    pegarAluno(id).setPlano(Planos.MAX);
-                }
                 
+            default:
                 break;
-
-            case "matriculado":
-                pegarAluno(id).setMatriculado(Boolean.getBoolean(args));
-                break;
-
         }
-
     }
 
     public static void deletar(int id) {
@@ -84,7 +73,7 @@ public class Gerenciador {
 
     public static Aluno pegarAluno(int id) {
         for (Aluno a : alunos) {
-            if (a.getId() == id) {
+            if (a.getId() == id && a != null) {
                 return a;
             }
         }
