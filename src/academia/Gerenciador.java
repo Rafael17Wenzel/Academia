@@ -1,6 +1,7 @@
 package academia;
 
 import model.Aluno;
+import enums.Planos;
 
 public class Gerenciador {
 
@@ -34,7 +35,15 @@ public class Gerenciador {
                 break;
 
             case "plano":
-                pegarAluno(id).setPlano(args);
+                int p = Integer.parseInt(args);
+                if(p == 1) {
+                    pegarAluno(id).setPlano(Planos.BASICO);
+                } else if(p == 2) {
+                    pegarAluno(id).setPlano(Planos.PLUS);
+                } else if(p == 3) {
+                    pegarAluno(id).setPlano(Planos.MAX);
+                }
+                
                 break;
 
             case "matriculado":
@@ -84,9 +93,8 @@ public class Gerenciador {
 
     private static int pegarIndiceAluno(int id) {
         for (int i = 0; i < alunos.length; i++) {
-            if (alunos[i].getId() == id) {
+            if (alunos[i] != null && alunos[i].getId() == id) {
                 return i;
-
             }
 
         }
@@ -95,37 +103,33 @@ public class Gerenciador {
     }
 
     public static void arrumarArray() {
-        //verificar se array é nulo
+        // Verificar se o array é nulo
         if (alunos[0] == null) {
             return;
-
         }
 
-        //salvar array original 
-        Aluno[] antigoArray = alunos;
-
-        // contar nulos 
-        int nulos = 0;
+        // Contar elementos não nulos
+        int count = 0;
         for (Aluno a : alunos) {
-            if (a == null) {
-                nulos++;
+            if (a != null) {
+                count++;
             }
-
         }
-        alunos = new Aluno[antigoArray.length - nulos];
 
-        // colocar alunos do antigo array no novo
+        // Criar novo array com tamanho apropriado
+        Aluno[] novoArray = new Aluno[count];
+    
+        // Copiar elementos não nulos para o novo array
         int j = 0;
-        for (int i = 0; i < antigoArray.length; i++) {
-            if (alunos[j] != null) {
-                alunos[j] = antigoArray[i];
-
-            } else {
-                i++;
+        for (Aluno a : alunos) {
+            if (a != null) {
+                novoArray[j] = a;
+                j++;
             }
-
-            j++;
         }
+
+        // Atualizar a referência do array original
+        alunos = novoArray;
 
     }
 

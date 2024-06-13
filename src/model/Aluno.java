@@ -1,5 +1,7 @@
 package model;
 
+import enums.Planos;
+
 public class Aluno {
 
     public static int quantidadeDeAlunosCriados = 0;
@@ -8,14 +10,14 @@ public class Aluno {
     private String nome;
     private long rg;
     private long cpf;
-    private String plano;
+    private Planos plano;
     private boolean matriculado;
 
     public Aluno() {
 
     }
 
-    public Aluno(String nome, long rg, long cpf, String plano, boolean matriculado) {
+    public Aluno(String nome, long rg, long cpf, Planos plano, boolean matriculado) {
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
@@ -60,11 +62,11 @@ public class Aluno {
         this.cpf = cpf;
     }
 
-    public String getPlano() {
+    public Planos getPlano() {
         return plano;
     }
 
-    public void setPlano(String plano) {
+    public void setPlano(Planos plano) {
         this.plano = plano;
     }
 

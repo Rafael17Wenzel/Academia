@@ -33,8 +33,10 @@ public class TabelaModel extends AbstractTableModel {
         if (alunos == null || alunos.length == 0) {
             return null;
         }
-
         Aluno aluno = alunos[row];
+        if(aluno == null) {
+            return null;
+        }
         switch (col) {
             case 0:
                 return aluno.getId();
